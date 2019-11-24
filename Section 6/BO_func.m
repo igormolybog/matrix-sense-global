@@ -1,7 +1,7 @@
 function [min_ball, min_sphere] = BO_func(caseN, R, omega)
 %BO_FUNC Summary of this function goes here
 %   Detailed explanation goes here
-    addpath('util/');
+    addpath('../util/');
     
     A = casetoA(caseN);
     H = A.'*A;
@@ -19,7 +19,7 @@ function [min_ball, min_sphere] = BO_func(caseN, R, omega)
         obj_ball = @(t) fun30_ball(t, S, W, omega);
         obj_sphere = @(t) fun30_sphere(t, R, S, W, omega);
     else
-        'ERROR: caseN must take values 9, 14 or 30. we got: '
+        'ERROR: caseN must take values 9, 14 or 30. BO_func got: '
         caseN
     end
     

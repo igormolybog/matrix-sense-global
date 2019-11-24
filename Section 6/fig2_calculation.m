@@ -1,7 +1,7 @@
 % Initial setup
 
 N = 9; % (N might be equal to 9, 14 or 30)
-Rs = 0:0.25:10;
+Rs = 0.25:0.25:10;
 
 I = size(Rs,2);
 results_ball = cell(I,1); % results of optimization of LMI_P will be returned here
