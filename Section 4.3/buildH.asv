@@ -1,0 +1,33 @@
+function H = H(y)
+% y --- vector (COLUMN) y_1, .. y_{n-1}
+
+if size(y,1)<size(y,2)
+    y = y';
+end
+assert(size(y,2) == 1);
+n = size(y,1)+1;
+H = sparse(n*n, n*n);
+for i = 1:n-1
+H = H + y(i)^2*vec(E(i,i,n)-E(i,n,n))*vec(E(i,i,n)-E(i,n,n))';
+end
+
+anant = sparse()
+for j = 1:n-1
+    
+end
+
+
+end
+
+function E = E(i,j,n)
+E = sparse(n,n);
+E(i,j) = 1;
+end
+
+function vec = vec(Matrix)
+vec = Matrix(:);
+end
+
+% function unvec = unvec(Vector)
+% unvec = reshape
+% end

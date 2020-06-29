@@ -1,0 +1,1 @@
+ [const, xmi, zmi, xma, zma] = RIP(buildH([1,1,1]), 2);

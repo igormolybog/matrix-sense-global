@@ -1,0 +1,16 @@
+function [outputArg1,outputArg2] = RIP(inputArg1,inputArg2)
+% Estimates the RIP constant that corresponds to the kernel operator H
+ma = 0;
+mi = inf;
+
+
+mi = min(A_RI);
+ma = max(A_RI);
+plot(1:I, (ma./(mi+ma))*2-ones(1,I)) %RIP constant of A
+
+end
+
+function sample = sampleRI(H, X)
+    XX = X*X.';
+    sample = (XX(:)'*H*XX(:)/norm(X,'F'))^2;
+end
